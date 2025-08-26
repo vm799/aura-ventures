@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Luxury Color Palette */
+  --color-midnight: 10 31 68;
+  --color-gold: 212 175 55;
+  --color-sapphire: 44 109 191;
+  --color-cream: 248 248 248;
+  --color-charcoal: 46 46 46;
+  
+  /* Semantic Colors */
+  --color-background: var(--color-cream);
+  --color-background-dark: var(--color-midnight);
+  --color-text-primary: var(--color-midnight);
+  --color-text-secondary: var(--color-charcoal);
+  --color-accent: var(--color-gold);
+  --color-interactive: var(--color-sapphire);
+  
+  /* Luxury Gradients */
+  --gradient-midnight: linear-gradient(135deg, hsl(var(--color-midnight)) 0%, hsl(220 40% 15%) 100%);
+  --gradient-gold: linear-gradient(135deg, hsl(var(--color-gold)) 0%, hsl(45 80% 55%) 100%);
+  --gradient-hero: linear-gradient(135deg, hsl(var(--color-midnight) / 0.95) 0%, hsl(var(--color-midnight) / 0.8) 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: hsl(var(--color-text-primary));
+  background: hsl(var(--color-background));
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--color-cream));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--color-gold) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--color-gold) / 0.5);
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-400 text-white font-medium rounded-lg transition-all duration-300 hover:from-gold-600 hover:to-gold-500 hover:shadow-lg hover:shadow-gold-500/25 focus:outline-none focus:ring-2 focus:ring-gold-500/50 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-gold-500 text-gold-500 font-medium rounded-lg transition-all duration-300 hover:bg-gold-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-gold-500/50 focus:ring-offset-2;
+  }
+
+  .luxury-card {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl transition-all duration-300 hover:bg-white/15 hover:border-white/30;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
