@@ -202,21 +202,21 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div v-for="package in servicePackages" :key="package.id" class="luxury-card">
+          <div v-for="pkg in servicePackages" :key="pkg.id" class="luxury-card">
             <div class="p-8">
               <div class="flex items-start justify-between mb-6">
                 <div>
-                  <h3 class="text-2xl font-serif font-bold text-white mb-2">{{ package.title }}</h3>
-                  <p class="text-white/70">{{ package.description }}</p>
+                  <h3 class="text-2xl font-serif font-bold text-white mb-2">{{ pkg.title }}</h3>
+                  <p class="text-white/70">{{ pkg.description }}</p>
                 </div>
                 <div class="text-right">
-                  <div class="text-2xl font-bold text-gold-400">${{ package.price.toLocaleString() }}</div>
-                  <div class="text-white/60 text-sm">{{ package.duration }}</div>
+                  <div class="text-2xl font-bold text-gold-400">${{ pkg.price.toLocaleString() }}</div>
+                  <div class="text-white/60 text-sm">{{ pkg.duration }}</div>
                 </div>
               </div>
 
               <div class="space-y-4 mb-8">
-                <div v-for="service in package.includedServices" :key="service" class="flex items-center space-x-3">
+                <div v-for="service in (pkg.includedServices || [])" :key="service" class="flex items-center space-x-3">
                   <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                   </svg>
@@ -566,5 +566,11 @@ const formatEventDate = (date: Date): string => {
     day: 'numeric',
     year: 'numeric'
   })
+}
+</script>
+
+<script lang="ts">
+export default {
+  name: 'EventsPage',
 }
 </script>
