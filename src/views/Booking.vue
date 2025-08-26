@@ -464,10 +464,17 @@ const confirmationNumber = ref('')
 const bookingData = ref({
   date: route.query.date as string || '',
   alternativeDate: '',
-  guests: parseInt(route.query.guests as string) || '',
+  guests: parseInt(route.query.guests as string) || 1,
   time: '',
   specialRequests: route.query.notes as string || '',
-  guestDetails: [] as any[],
+  guestDetails: [] as Array<{
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    passport: string;
+    dietary?: string;
+  }>,
   paymentMethod: 'card',
   cardNumber: '',
   expiryDate: '',
@@ -558,7 +565,7 @@ const initializeGuestDetails = () => {
     email: index === 0 ? 'vaishali@example.com' : '',
     phone: '',
     passport: '',
-    dietary: ''
+    dietary: '',
   }))
 }
 
@@ -604,4 +611,10 @@ onMounted(() => {
     window.location.href = '/experiences'
   }
 })
+</script>
+
+<script lang="ts">
+export default {
+  name: 'BookingPage',
+}
 </script>
