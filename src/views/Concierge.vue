@@ -268,6 +268,7 @@
 <script setup lang="ts">
 import { ref, nextTick, onMounted } from 'vue'
 import SafeImage from '@/components/SafeImage.vue'
+import { AEGEAN_YACHT_IMAGE } from '@/composables/useExperiences'
 
 const messagesContainer = ref<HTMLElement>()
 const currentMessage = ref('')
@@ -313,7 +314,7 @@ const messages = ref([
       title: 'Private Aegean Yacht Charter',
       location: 'Greek Islands',
       price: 85000,
-      image: 'https://images.pexels.com/photos/163236/yacht-ship-boat-sea-163236.jpeg?auto=compress&cs=tinysrgb&w=150'
+      image: AEGEAN_YACHT_IMAGE
     },
     timestamp: new Date(Date.now() - 120000)
   },

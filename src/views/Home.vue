@@ -5,7 +5,7 @@
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+          src="https://images.unsplash.com/photo-1540946485063-a40da4821b96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
           alt="Luxury yacht at sunset"
           class="w-full h-full object-cover opacity-20"
         />
