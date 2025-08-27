@@ -77,6 +77,7 @@
                     :src="experience.image"
                     :alt="experience.title"
                     class="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110"
+                    @error="(e) => ((e.target as HTMLImageElement).src = fallbackImage)"
                   />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
@@ -230,4 +231,6 @@ const sortedExperiences = computed(() => {
 
   return result.slice(0, displayLimit.value)
 })
+
+const fallbackImage = 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
 </script>

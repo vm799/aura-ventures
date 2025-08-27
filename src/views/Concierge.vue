@@ -75,7 +75,8 @@
                     <div class="bg-white/10 rounded-lg p-3 border border-white/20">
                       <div class="flex items-center space-x-3">
                         <img :src="message.experience.image" :alt="message.experience.title" 
-                             class="w-12 h-12 rounded-lg object-cover" />
+                             class="w-12 h-12 rounded-lg object-cover" 
+                             @error="(e) => ((e.target as HTMLImageElement).src = fallbackImage)" />
                         <div class="flex-1">
                           <h4 class="text-white font-semibold text-sm">{{ message.experience.title }}</h4>
                           <p class="text-white/60 text-xs">{{ message.experience.location }}</p>
@@ -533,4 +534,6 @@ const scrollToBottom = async () => {
 onMounted(() => {
   scrollToBottom()
 })
+
+const fallbackImage = 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=60'
 </script>

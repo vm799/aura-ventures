@@ -5,6 +5,7 @@
         :src="experience.image" 
         :alt="experience.title"
         class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+        @error="(e) => ((e.target as HTMLImageElement).src = fallbackImage)"
       />
       <div class="absolute top-4 right-4">
         <span class="px-3 py-1 bg-gradient-to-r from-gold-500 to-gold-400 rounded-full text-xs font-medium text-white">
@@ -54,4 +55,6 @@ interface Experience {
 defineProps<{
   experience: Experience
 }>()
+
+const fallbackImage = 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
 </script>

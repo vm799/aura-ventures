@@ -7,6 +7,7 @@
           :src="currentImage" 
           :alt="experience.title"
           class="w-full h-full object-cover transition-all duration-1000"
+          @error="handleHeroImageError"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-midnight-900/90 via-transparent to-midnight-900/60"></div>
       </div>
@@ -23,7 +24,7 @@
               currentImageIndex === index ? 'border-gold-400' : 'border-white/30 hover:border-white/60'
             ]"
           >
-            <img :src="image" :alt="`Gallery ${index + 1}`" class="w-full h-full object-cover" />
+            <img :src="image" :alt="`Gallery ${index + 1}`" class="w-full h-full object-cover" @error="(e) => handleThumbError(e, index)" />
           </button>
         </div>
       </div>
@@ -358,4 +359,18 @@ onUnmounted(() => {
     clearInterval(galleryInterval)
   }
 })
+
+// Image error handlers
+const placeholderImage = 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60'
+const handleHeroImageError = () => {
+  if (!experience.value) return
+  experience.value.gallery[0] = placeholderImage
+}
+const handleThumbError = (e: Event, index: number) => {
+  const target = e.target as HTMLImageElement
+  target.src = placeholderImage
+  if (experience.value && experience.value.gallery[index]) {
+    experience.value.gallery[index] = placeholderImage
+  }
+}
 </script>
