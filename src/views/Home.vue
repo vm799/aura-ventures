@@ -144,7 +144,7 @@ const featuredExperiences = ref([
     id: '1',
     title: 'Private Aegean Yacht Charter',
     description: 'Explore the Greek islands aboard a 120ft luxury yacht with personal chef and crew. Seven days of pure indulgence.',
-    image: 'https://images.unsplash.com/photo-1540946485063-a40da4821b96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     tier: 'Platinum' as const
   },
   {
