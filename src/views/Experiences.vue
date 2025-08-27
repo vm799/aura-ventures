@@ -73,11 +73,13 @@
               <div class="luxury-card h-full flex flex-col overflow-hidden hover:shadow-2xl hover:shadow-gold-500/10 transition-all duration-500 hover:-translate-y-1">
                 <!-- Image -->
                 <div class="relative overflow-hidden">
-                  <img
+                  <SafeImage
                     :src="experience.image"
                     :alt="experience.title"
                     class="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110"
-                    @error="(e) => ((e.target as HTMLImageElement).src = fallbackImage)"
+                    :fallback="fallbackImage"
+                    decoding="async"
+                    loading="lazy"
                   />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
@@ -183,6 +185,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import SafeImage from '@/components/SafeImage.vue'
 import { useExperiences } from '@/composables/useExperiences'
 
 const { allExperiences } = useExperiences()

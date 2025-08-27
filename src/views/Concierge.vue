@@ -74,9 +74,9 @@
                     <p class="text-sm">{{ message.content }}</p>
                     <div class="bg-white/10 rounded-lg p-3 border border-white/20">
                       <div class="flex items-center space-x-3">
-                        <img :src="message.experience.image" :alt="message.experience.title" 
+                        <SafeImage :src="message.experience.image" :alt="message.experience.title" 
                              class="w-12 h-12 rounded-lg object-cover" 
-                             @error="(e) => ((e.target as HTMLImageElement).src = fallbackImage)" />
+                             :fallback="fallbackImage" />
                         <div class="flex-1">
                           <h4 class="text-white font-semibold text-sm">{{ message.experience.title }}</h4>
                           <p class="text-white/60 text-xs">{{ message.experience.location }}</p>
@@ -267,6 +267,7 @@
 
 <script setup lang="ts">
 import { ref, nextTick, onMounted } from 'vue'
+import SafeImage from '@/components/SafeImage.vue'
 
 const messagesContainer = ref<HTMLElement>()
 const currentMessage = ref('')

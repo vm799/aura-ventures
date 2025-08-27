@@ -1,11 +1,11 @@
 <template>
   <div class="luxury-card group cursor-pointer">
     <div class="aspect-w-16 aspect-h-9 mb-6 relative overflow-hidden rounded-xl">
-      <img 
+      <SafeImage 
         :src="experience.image" 
         :alt="experience.title"
         class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-        @error="(e) => ((e.target as HTMLImageElement).src = fallbackImage)"
+        :fallback="fallbackImage"
       />
       <div class="absolute top-4 right-4">
         <span class="px-3 py-1 bg-gradient-to-r from-gold-500 to-gold-400 rounded-full text-xs font-medium text-white">
@@ -44,6 +44,7 @@
 </template>
 
 <script setup lang="ts">
+import SafeImage from '@/components/SafeImage.vue'
 interface Experience {
   id: string
   title: string
