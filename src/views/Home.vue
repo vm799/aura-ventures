@@ -137,34 +137,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import ExperienceCard from '@/components/ExperienceCard.vue'
 import LuxuryIcons from '@/components/icons/LuxuryIcons.vue'
+import { useExperiences } from '@/composables/useExperiences'
 
-// Featured experiences for homepage
-const featuredExperiences = ref([
-  {
-    id: '1',
-    title: 'Private Aegean Yacht Charter',
-    description: 'Explore the Greek islands aboard a 120ft luxury yacht with personal chef and crew. Seven days of pure indulgence.',
-    image: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    tier: 'Platinum' as const
-  },
-  {
-    id: '2',
-    title: 'Helicopter Wine Tour Napa',
-    description: 'Private helicopter tour of Napa Valley with exclusive tastings at renowned vineyards and Michelin-starred dining.',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    tier: 'Gold' as const
-  },
-  {
-    id: '3',
-    title: 'Private Opera Box Vienna',
-    description: 'Exclusive box seats at Vienna State Opera with backstage access and private dinner with renowned performers.',
-    image: 'https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    tier: 'Platinum' as const
-  }
-])
+// Featured experiences for homepage sourced from central data
+const { getExperienceById } = useExperiences()
+const featuredExperiences = computed(() => {
+  return ['1','2','3']
+    .map(id => getExperienceById(id))
+    .filter(Boolean) as Array<any>
+})
 
 // Quick access services with routes
 const quickServices = ref([
