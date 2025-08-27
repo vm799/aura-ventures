@@ -5,7 +5,7 @@
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
         <img 
-          src="https://images.pexels.com/photos/163236/yacht-ship-boat-sea-163236.jpeg?auto=compress&cs=tinysrgb&w=2070" 
+          src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
           alt="Luxury yacht at sunset"
           class="w-full h-full object-cover opacity-20"
         />
@@ -57,11 +57,14 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ExperienceCard 
+          <router-link 
             v-for="experience in featuredExperiences" 
             :key="experience.id"
-            :experience="experience"
-          />
+            :to="`/experience/${experience.id}`"
+            class="block group"
+          >
+            <ExperienceCard :experience="experience" />
+          </router-link>
         </div>
 
         <div class="text-center mt-12">
@@ -144,7 +147,7 @@ const featuredExperiences = ref([
     id: '1',
     title: 'Private Aegean Yacht Charter',
     description: 'Explore the Greek islands aboard a 120ft luxury yacht with personal chef and crew. Seven days of pure indulgence.',
-    image: 'https://images.pexels.com/photos/163236/yacht-ship-boat-sea-163236.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     tier: 'Platinum' as const
   },
   {

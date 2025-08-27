@@ -83,9 +83,9 @@
                           <p class="text-gold-400 font-bold text-sm">${{ message.experience.price.toLocaleString() }}</p>
                         </div>
                       </div>
-                      <button class="w-full mt-3 bg-gold-500 hover:bg-gold-600 text-white text-xs py-2 rounded-lg transition-colors">
+                      <router-link to="/experience/1" class="w-full mt-3 bg-gold-500 hover:bg-gold-600 text-white text-xs py-2 rounded-lg transition-colors block text-center">
                         View Details
-                      </button>
+                      </router-link>
                     </div>
                     <div class="text-xs opacity-70 text-white/60">
                       {{ formatTime(message.timestamp) }}
