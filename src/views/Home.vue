@@ -5,7 +5,7 @@
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+          src="https://images.pexels.com/photos/163236/yacht-ship-boat-sea-163236.jpeg?auto=compress&cs=tinysrgb&w=2070" 
           alt="Luxury yacht at sunset"
           class="w-full h-full object-cover opacity-20"
         />
@@ -144,7 +144,7 @@ const featuredExperiences = ref([
     id: '1',
     title: 'Private Aegean Yacht Charter',
     description: 'Explore the Greek islands aboard a 120ft luxury yacht with personal chef and crew. Seven days of pure indulgence.',
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.pexels.com/photos/163236/yacht-ship-boat-sea-163236.jpeg?auto=compress&cs=tinysrgb&w=800',
     tier: 'Platinum' as const
   },
   {

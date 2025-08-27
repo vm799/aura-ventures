@@ -26,9 +26,9 @@ const experiences = ref<Experience[]>([
     title: 'Private Aegean Yacht Charter',
     description: 'Explore the Greek islands aboard a 120ft luxury yacht with personal chef and crew. Seven days of pure indulgence.',
     longDescription: 'Embark on the ultimate Mediterranean adventure aboard our meticulously appointed 120-foot luxury yacht. This seven-day journey through the pristine waters of the Aegean Sea offers unparalleled access to Greece\'s most exclusive islands and hidden coves. Your dedicated crew of eight includes a Michelin-trained chef, sommelier, and experienced captain who knows every secret anchorage.',
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.pexels.com/photos/163236/yacht-ship-boat-sea-163236.jpeg?auto=compress&cs=tinysrgb&w=800',
     gallery: [
-      'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      'https://images.pexels.com/photos/163236/yacht-ship-boat-sea-163236.jpeg?auto=compress&cs=tinysrgb&w=800',
       'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     ],

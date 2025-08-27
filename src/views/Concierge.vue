@@ -313,7 +313,7 @@ const messages = ref([
       title: 'Private Aegean Yacht Charter',
       location: 'Greek Islands',
       price: 85000,
-      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
+      image: 'https://images.pexels.com/photos/163236/yacht-ship-boat-sea-163236.jpeg?auto=compress&cs=tinysrgb&w=150'
     },
     timestamp: new Date(Date.now() - 120000)
   },
