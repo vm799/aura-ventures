@@ -536,5 +536,5 @@ onMounted(() => {
   scrollToBottom()
 })
 
-const fallbackImage = 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=60'
+const fallbackImage = 'https://images.unsplash.com/photo-1540946485063-a40da4821b96?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'
 </script>
