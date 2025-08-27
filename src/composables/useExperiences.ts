@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 
-export const AEGEAN_YACHT_IMAGE = 'https://source.unsplash.com/bt-AYttMuww/1600x1000'
+export const AEGEAN_YACHT_IMAGE = 'https://unsplash.com/photos/white-and-gold-yacht-scenery-bt-AYttMuww'
 
 export interface Experience {
   id: string
