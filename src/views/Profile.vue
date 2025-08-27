@@ -245,7 +245,7 @@
                       <div class="flex items-center space-x-4">
                         <label class="flex items-center space-x-2">
                           <input 
-                            v-model="notifications[option.id].email" 
+                            v-model="(notifications as any)[option.id].email" 
                             type="checkbox" 
                             class="w-4 h-4 text-gold-500 bg-white/10 border-white/30 rounded focus:ring-gold-500"
                           />
@@ -253,7 +253,7 @@
                         </label>
                         <label class="flex items-center space-x-2">
                           <input 
-                            v-model="notifications[option.id].sms" 
+                            v-model="(notifications as any)[option.id].sms" 
                             type="checkbox" 
                             class="w-4 h-4 text-gold-500 bg-white/10 border-white/30 rounded focus:ring-gold-500"
                           />
@@ -261,7 +261,7 @@
                         </label>
                         <label class="flex items-center space-x-2">
                           <input 
-                            v-model="notifications[option.id].push" 
+                            v-model="(notifications as any)[option.id].push" 
                             type="checkbox" 
                             class="w-4 h-4 text-gold-500 bg-white/10 border-white/30 rounded focus:ring-gold-500"
                           />

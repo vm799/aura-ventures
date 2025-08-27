@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    if: false # disabled; superseded by Vite + Pages workflow
     runs-on: ubuntu-latest
 
     strategy:
