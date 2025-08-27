@@ -284,7 +284,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useExperiences } from '@/composables/useExperiences'
 
@@ -342,9 +342,12 @@ const handleBooking = () => {
 let galleryInterval: number | null = null
 
 onMounted(() => {
-  if (experience.value?.gallery.length > 1) {
+  if (experience.value && experience.value.gallery && experience.value.gallery.length > 1) {
     galleryInterval = setInterval(() => {
-      currentImageIndex.value = (currentImageIndex.value + 1) % experience.value!.gallery.length
+      const galleryLength = experience.value?.gallery?.length ?? 0
+      if (galleryLength > 0) {
+        currentImageIndex.value = (currentImageIndex.value + 1) % galleryLength
+      }
     }, 5000)
   }
 })

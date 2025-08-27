@@ -70,7 +70,7 @@
                     </div>
                   </div>
                   
-                  <div v-else-if="message.type === 'experience'" class="space-y-3">
+                  <div v-else-if="message.type === 'experience' && message.experience" class="space-y-3">
                     <p class="text-sm">{{ message.content }}</p>
                     <div class="bg-white/10 rounded-lg p-3 border border-white/20">
                       <div class="flex items-center space-x-3">

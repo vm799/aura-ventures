@@ -405,6 +405,6 @@ const getActivityIcon = (type: string) => {
     ])
   }
   
-  return icons[type] || icons.booking
+  return (icons as Record<string, () => any>)[type] || icons.booking
 }
 </script>
